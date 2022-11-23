@@ -1,54 +1,79 @@
-function bye(){
-    console.log ("Gracias, te esperamos!")
-}
-
-let producto = parseInt(prompt('Escoge que diseño te gustaria llevar en tus uñas: 1. De Colores  2.Efecto - 3.Glitter - 4.Encapsulado - 5.Accesorio 3D'))
-let seguirComprando = true
-let totalCompra = 0.00
-let decision
-
 const diseñosArray = []
+const formUser = document.getElementById('form')
 
 class NewDesign {
-    constructor(id,tipo,price,stock) {
+    constructor(id, name, price, stock) {
         this.id = id
-        this.tipo = tipo
+        this.name = name
         this.price = price
         this.stock = stock
     }
 }
-const deColores = new NewDesign(1,'De Colores', 10.0, 10)
-diseñosArray.push(deColores)
-const efecto = new NewDesign(2,'Efecto', 40.0, 10)
-diseñosArray.push(efecto)
-const glitter = new NewDesign(3,'Glitter', 35.0, 10)
+const cromado = new NewDesign(1, 'Cromado', 40.0, 10)
+diseñosArray.push(cromado)
+const glitter = new NewDesign(2, 'Glitter', 35.0, 10)
 diseñosArray.push(glitter)
-const encapsulado = new NewDesign(4,'Encapsulado', 100.0, 10)
+const encapsulado = new NewDesign(3, 'Encapsulado', 100.0, 10)
 diseñosArray.push(encapsulado)
-const accesorio3d = new NewDesign(5,'Accesorio 3D', 150.0, 10)
-diseñosArray.push(accesorio3d);
-console.log(diseñosArray)
+const diseño3d = new NewDesign(4, 'Diseño 3D', 150.0, 10)
+diseñosArray.push(diseño3d)
 
-while (seguirComprando === true) {
-    // if (producto === 1) {
-    //     totalCompra = totalCompra + 10.00
-    // } else if (producto === 2) {
-    //     totalCompra = totalCompra + 40.00
-    // } else if (producto === 3) {
-    //     totalCompra = totalCompra + 35.00
-    // } else if (producto === 4) {
-    //     totalCompra = totalCompra + 100.00
-    // } else if (producto === 5) {
-    //     totalCompra = totalCompra + 150.00
-    // }
-    totalCompra = totalCompra + diseñosArray[producto-1].price
-    
-    decision = parseInt(prompt('Quieres seguir escogiendo? 1.Si = 2.No'))
-    if(decision===1) {
-        producto = parseInt(prompt('Escoge que te gustaria llevar en tus uñas hoy: 1. De Colores - 2.Efecto - 3.Glitter - 4.Encapsulado - 5.Accesorio 3D'))
-    } else {
-        seguirComprando = false
-    }
+//DOM
+const selectDesign = document.getElementById('lista')
+diseñosArray.forEach((elemento) => {
+    const optionDesign = document.createElement('option')
+    optionDesign.innerText = `${elemento.name}: $${elemento.price}`
+    optionDesign.setAttribute('id', `${elemento.id}`)
+    selectDesign.append(optionDesign)
+})
+
+//carrito
+const carrito = []
+
+const botonAgregar = document.getElementById('botonAdd')
+const finalizarCompra = document.getElementById('finalizarCompra')
+
+botonAdd.onclick = () => {
+    console.log(selectDesign.selectedIndex)
+    const indexDesign = selectDesign.selectedIndex
+    const diseñoSeleccionado = diseñosArray[indexDesign]
+    console.log(diseñoSeleccionado)
+    carrito.push(diseñoSeleccionado)
 }
-alert(`El total de  tus uñas es de ${totalCompra}`)
-bye();
+
+finalizarCompra.onclick = () => {
+    console.log(carrito)
+    let total = 0
+    carrito.forEach((design) => {
+        total = total + design.price
+    })
+    alert(`El total es de ${total} dolares. Ingresa tus datos para completar tu cita`)
+}
+
+//elemento
+const inputNombre = document.getElementById('nombre')
+const inputApellido = document.getElementById('apellido')
+const usuario = {}
+
+inputNombre.onchange = (e) => {
+    usuario.nombre = e.target.value
+}
+inputApellido.onchange = (e) => {
+    usuario.apellido = e.target.value
+}
+
+const infoUser = {}
+
+formUser.onsubmit = (e) => {
+    e.preventDefault()
+    infoUser.nombre = inputNombre.value
+    infoUser.apellido = inputApellido.value
+    localStorage.setItem('infoUser',JSON.stringify(infoUser))
+}
+
+const infoUserStorage = JSON.parse(localStorage.getItem('infoUser'))
+console.log(infoUserStorage)
+
+agendar.onclick = () => {
+    alert(`Gracias por agendar con nosotras ${usuario.nombre} ${usuario.apellido} te esperamos`)
+}

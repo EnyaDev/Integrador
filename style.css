@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 10px;
+    background-image: url(../img/wallp.jpg);
+    background-repeat: repeat;
+    font-family: poppins;
+}
+
+h1 {
+    padding: 15px;
+}
+
+form {
+    margin: 8px 0px;
+}
+
+button {
+    margin-top: 7px;
+}
+
+.designs ol{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.designs img {
+    width: 150px;
+}
