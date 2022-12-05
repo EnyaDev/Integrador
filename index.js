@@ -50,9 +50,11 @@ finalizarCompra.onclick = () => {
     alert(`El total es de ${total} dolares. Ingresa tus datos para completar tu cita`)
 }
 
-//elemento
+//STORAGE
+const welcome = document.getElementById('welcome')
 const inputNombre = document.getElementById('nombre')
 const inputApellido = document.getElementById('apellido')
+
 const usuario = {}
 
 inputNombre.onchange = (e) => {
@@ -64,6 +66,7 @@ inputApellido.onchange = (e) => {
 
 const infoUser = {}
 
+//evento submit
 formUser.onsubmit = (e) => {
     e.preventDefault()
     infoUser.nombre = inputNombre.value
@@ -72,7 +75,9 @@ formUser.onsubmit = (e) => {
 }
 
 const infoUserStorage = JSON.parse(localStorage.getItem('infoUser'))
-console.log(infoUserStorage)
+if(infoUserStorage.nombre !== "" || infoUserStorage.apellido !== ""){
+    welcome.innerText = `Bienvenida de vuelta ${infoUserStorage.nombre} ${infoUserStorage.apellido}!`
+}
 
 agendar.onclick = () => {
     alert(`Gracias por agendar con nosotras ${usuario.nombre} ${usuario.apellido} te esperamos`)
