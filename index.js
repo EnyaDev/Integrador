@@ -35,15 +35,12 @@ const botonAgregar = document.getElementById('botonAdd')
 const finalizarCompra = document.getElementById('finalizarCompra')
 
 botonAdd.onclick = () => {
-    console.log(selectDesign.selectedIndex)
     const indexDesign = selectDesign.selectedIndex
     const diseñoSeleccionado = diseñosArray[indexDesign]
-    console.log(diseñoSeleccionado)
     carrito.push(diseñoSeleccionado)
 }
 
 finalizarCompra.onclick = () => {
-    console.log(carrito)
     let total = 0
     carrito.forEach((design) => {
         total = total + design.price
