@@ -1,3 +1,4 @@
+
 const diseñosArray = []
 const formUser = document.getElementById('form')
 
@@ -47,7 +48,7 @@ finalizarCompra.onclick = () => {
     carrito.forEach((design) => {
         total = total + design.price
     })
-    alert(`El total es de ${total} dolares. Ingresa tus datos para completar tu cita`)
+    Swal.fire(`El total es de ${total} dolares. Ingresa tus datos para completar tu cita`)
 }
 
 //STORAGE
@@ -71,14 +72,17 @@ formUser.onsubmit = (e) => {
     e.preventDefault()
     infoUser.nombre = inputNombre.value
     infoUser.apellido = inputApellido.value
-    localStorage.setItem('infoUser',JSON.stringify(infoUser))
+    localStorage.setItem('infoUser', JSON.stringify(infoUser))
 }
 
 const infoUserStorage = JSON.parse(localStorage.getItem('infoUser'))
-if(infoUserStorage.nombre !== "" || infoUserStorage.apellido !== ""){
+if (infoUserStorage.nombre !== "" || infoUserStorage.apellido !== "") {
     welcome.innerText = `Bienvenida de vuelta ${infoUserStorage.nombre} ${infoUserStorage.apellido}!`
 }
 
 agendar.onclick = () => {
-    alert(`Gracias por agendar con nosotras ${usuario.nombre} ${usuario.apellido} te esperamos`)
+    Swal.fire({
+        text: `Gracias por agendar con nosotras ${usuario.nombre} ${usuario.apellido} te esperamos`,
+        icon: 'success',
+    })
 }
