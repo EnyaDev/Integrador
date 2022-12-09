@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Cromado",
+        "price": 40.00,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeNRLFV4TPbGTHttoqZRdZu6PHACze6-87RwvHDBT1XqTV-hrBOZp3ZvfoEa9wyBRfl4&usqp=CAU"
+    },
+    {
+        "id": 2,
+        "name": "Glitter",
+        "price": 35.00,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax8E5wcLwIdqVhPOqG69WykMfWBMwED8OQPIhg85x6uRBLwUC5NYkuuCDweSm2r1Pd8Q&usqp=CAU"
+    },
+    {
+        "id": 3,
+        "name": "Encapsulado",
+        "price": 100.00,
+        "image": "https://i.blogs.es/42d526/274857342_3035266973379831_8363064571846029922_n/450_1000.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Diseño 3D",
+        "price": 150.00,
+        "image": "https://heraldodemexico.com.mx/u/fotografias/m/2022/6/8/f768x1-525121_525248_5050.jpeg"
+    }
+]

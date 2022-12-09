@@ -1,3 +1,8 @@
+.cards {
+    width:250px;
+    margin: 10px;
+}
+
 body{
     margin: 0;
     padding: 10px;
@@ -16,14 +21,4 @@ form {
 
 button {
     margin-top: 7px;
-}
-
-.designs ol{
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-}
-
-.designs img {
-    width: 150px;
 }
