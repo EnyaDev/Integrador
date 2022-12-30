@@ -34,13 +34,20 @@
     <div id="mainDiv">
         <select name="lista" id="lista"></select>
     </div>
-    <button id="filtrar" class="btn btn-success">filtrar</button>
-    <button id="finalizarCompra">Finalizar</button>
-    <form id="form">
-        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
-        <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
-        <input type="submit" value="Agendar" id="agendar">
-    </form>
+    <button id="filtrar" class="btn">Filtrar</button>
+    <button class="end" id="finalizarCompra">Finalizar</button>
+
+    <div class="container text-center w-25 mt-4">
+        <form>
+            <input class="form-control m-1" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+            <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
+            <input class="agendar m-1" type="submit" value="Agendar" id="agendar">
+        </form>
+    </div>
+    <div class="prod-container mt-4">
+
+    </div>
+    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
 </body>
