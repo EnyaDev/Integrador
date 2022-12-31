@@ -10,7 +10,6 @@
         "id": 2,
         "name": "Glitter",
         "price": 35.00,
-        "category": "Gelish",
         "image": "img/glitter.jpg"
     },
 
@@ -25,6 +24,6 @@
         "id": 4,
         "name": "Diseño 3D",
         "price": 150.00,
-        "image": "img/3d.jpg"
+        "image": "https://www.eluniversal.com.mx/sites/default/files/upload/u253320/unas-3d.3.jpg"
     }
 ]
